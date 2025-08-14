@@ -1,0 +1,85 @@
+# Python相关文件
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 虚拟环境
+.venv/
+venv/
+ENV/
+env/
+
+# Django相关文件
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+static/
+
+# 开发工具和配置
+.git/
+.gitignore
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python项目文件
+manage.py
+requirements.txt
+OfficeTools/
+templates/
+
+# Vercel相关文件
+.vercel/
+.vercelignore
+vercel.json
+
+# 原有的Dockerfile
+Dockerfile
+
+# 测试和文档
+README.md
+*.md
+tests/
+test_*
+*_test.py
+
+# 输出文件
+output/
+*.xlsx
+
+# 多架构构建相关
+.buildx_cache/
+buildx-cache/
+*.log
+
+# CI/CD相关
+.github/
+.gitlab-ci.yml
+.travis.yml
+circle.yml
+
+# 构建脚本（保留在镜像外）
+build-multiarch.sh
+docker-compose*.yml
