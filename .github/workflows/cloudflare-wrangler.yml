@@ -17,6 +17,6 @@ jobs:
         with:
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          command: pages deploy ./public --project-name=kbsonlong
+          command: pages deploy ./ --project-name=excel-processor
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           wranglerVersion: '3'
