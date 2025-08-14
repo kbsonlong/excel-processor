@@ -136,6 +136,15 @@ function loadSheetData(sheetName) {
             return;
         }
         
+        // 显示可用列名
+        showAvailableColumns();
+        
+        // 显示columns-info区域
+        const columnsInfo = document.querySelector('.columns-info');
+        if (columnsInfo) {
+            columnsInfo.style.display = 'block';
+        }
+        
         // 显示预览
         showPreview();
         hideError();
@@ -152,6 +161,12 @@ function hidePreview() {
     previewSection.style.display = 'none';
     resultSection.style.display = 'none';
     sheetSelection.style.display = 'none';
+    
+    // 隐藏columns-info区域
+    const columnsInfo = document.querySelector('.columns-info');
+    if (columnsInfo) {
+        columnsInfo.style.display = 'none';
+    }
 }
 
 // 显示文件预览
@@ -617,23 +632,27 @@ function hideError() {
 
 // 重置UI
 function resetUI() {
-    currentWorkbook = null;
-    currentData = null;
-    currentFileName = '';
-    currentSheetName = '';
-    
+    // 重置文件输入
     const wrapper = fileInput.closest('.file-input-wrapper');
     wrapper.classList.remove('has-file');
     const label = wrapper.querySelector('.file-text');
     label.textContent = '选择Excel文件';
     
-    // 重置工作表选择器
-    sheetSelect.innerHTML = '<option value="">请选择工作表...</option>';
-    sheetSelection.style.display = 'none';
+    // 清空表单
+    splitKeyInput.value = '';
+    multCheckbox.checked = false;
     
-    previewSection.style.display = 'none';
-    resultSection.style.display = 'none';
+    // 隐藏所有区域
+    hidePreview();
     hideError();
+    
+    // 重置全局变量
+    currentWorkbook = null;
+    currentData = null;
+    currentFileName = '';
+    currentSheetName = '';
+    
+    // 验证表单
     validateForm();
 }
 

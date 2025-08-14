@@ -24,7 +24,22 @@
                             <span class="file-text">选择Excel文件</span>
                         </label>
                     </div>
-                    
+                    <div class="sheet-selection" id="sheet_selection" style="display: none;">
+                        <h3>选择工作表</h3>
+                        <div class="sheet-info">
+                            <p>检测到多个工作表，请选择要处理的工作表：</p>
+                        </div>
+                        <div class="sheet-selector">
+                            <select id="sheet_select" class="sheet-dropdown">
+                                <option value="">请选择工作表...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="columns-info" style="display: none;">
+                        <h4>可用列名:</h4>
+                        <p>点击自动填充拆分键</p>
+                        <div id="columns_list"></div>
+                    </div>
                     <div class="form-group">
                         <label for="split_key">拆分键(表格列名):</label>
                         <input type="text" id="split_key" placeholder="请输入列名" required>
@@ -46,23 +61,8 @@
                 </div>
             </div>
 
-            <div class="sheet-selection" id="sheet_selection" style="display: none;">
-                <h3>选择工作表</h3>
-                <div class="sheet-info">
-                    <p>检测到多个工作表，请选择要处理的工作表：</p>
-                </div>
-                <div class="sheet-selector">
-                    <select id="sheet_select" class="sheet-dropdown">
-                        <option value="">请选择工作表...</option>
-                    </select>
-                </div>
-            </div>
+
             <div class="preview-section" id="preview_section" style="display: none;">
-                <div class="columns-info">
-                    <h4>可用列名:</h4>
-                    <p>点击自动填充拆分键</p>
-                    <div id="columns_list"></div>
-                </div>
                 <h3>文件预览</h3>
                 <div class="table-info">
                     <p>文件名: <span id="file_name"></span></p>
